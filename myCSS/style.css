@@ -58,7 +58,8 @@
 }
 
 .clock{
-  background: orange;
+  background: lightgreen;
+  height: 80px;
   float: right;
   padding: 10px;
   text-align: right;
@@ -91,5 +92,4 @@ table{
 
 td{
   border: 1px solid #000;
-  margin: 0px;
 }
