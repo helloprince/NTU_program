@@ -84,3 +84,7 @@
   border-top:5px solid #fff;
   margin-top:-4px;
 }
+
+table{
+  border: 2px solid #000;
+}
