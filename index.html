@@ -6,13 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./myCSS/style.css">
   <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script type="text/javascript" src="./myJS/jquery.min.js"></script>
-  <script type="text/javascript" src="./myJS/jquery.hoverIntent.js"></script>
-  <script type="text/javascript" src="./myJS/superfish.js"></script>
   <script type="text/javascript">
-    jQuery(function () {
-        jQuery('ul.nav').superfish();
-    });
+  function d3(){
+    var svgContainer = d3.select(".b1").append("svg")
+  }
+  d3();
   </script>
   <script async src="./myJS/myjs.js"></script>
   <title>Movie&Books</title>
@@ -40,7 +38,6 @@
     <div class="l2"></div>
   </div>
   <div class="right">
-  <div style="float: left;">
   <svg height="800" width="800">
     <circle cx="200" cy="200" r="100" fill="red" />
     <polygon points="90,30 170,105 110,155" style="fill:red;" />
@@ -57,7 +54,6 @@
     <rect x="480" y="280" rx="20" ry="20" width="50" height="120" style="fill:red;" />
     <path d="M 595 230 q50 -100 150 20" stroke="red" stroke-width="10" fill="none" />
   </svg>
-  </div>
   </div>
   <div class="footer"></div>
 </body>
