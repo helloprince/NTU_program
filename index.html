@@ -32,7 +32,7 @@
     <div class="l2"></div>
   </div>
   <div class="right">
-  <div style="float:left">
+  <div id="cat" style="float:left">
   <svg height="400" width="400">
     <circle cx="200" cy="200" r="100" fill="red" />
     <polygon points="90,30 170,105 110,155" style="fill:red;" />
@@ -46,7 +46,7 @@
     <rect x="125" y="225" width="150" height="25" style="fill:red;" />
   </svg>
   <script type="text/javascript">
-  var svgContainer = d3.select(".right").append("svg").attr("width", 400).attr("height", 400);
+  var svgContainer = d3.select("#cat").append("svg").attr("width", 400).attr("height", 400);
   </script>
   </div>
   </div>
