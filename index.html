@@ -11,9 +11,6 @@
 </head>
 
 <body>
-  <script type="text/javascript">
-    var svgContainer = d3.select(".right").append("svg").attr("width", 800).attr("height", 800);
-  </script>
   <div class="header">
     <div class="clock">
       <span id="date"></span>
@@ -36,6 +33,9 @@
   </div>
   <div class="right">
   <div style="float:left">
+  <script type="text/javascript">
+    var svgContainer = d3.select(".right").append("svg").attr("width", 800).attr("height", 800);
+  </script>
   <svg height="800" width="800">
     <circle cx="200" cy="200" r="100" fill="red" />
     <polygon points="90,30 170,105 110,155" style="fill:red;" />
