@@ -22,7 +22,8 @@ d3.csv("./stocks.csv",
 	function(data)
 	{
 		var ln = data.length;
-		var max= data.max;
+		var max = d3.max(data.close);
+		var min = d3.min(data.close);
 		data.forEach(
 			function(d)
 			{
