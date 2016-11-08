@@ -28,7 +28,7 @@ d3.csv("./stocks.csv",
 			{
 				d.date = parseTime(d.date);
 				d.close = +d.close;
-				max = d3.max(d.close);
+				var max = d3.max(d.close);
 			}
 		);
 
@@ -41,14 +41,12 @@ d3.csv("./stocks.csv",
 			function(d,i) 
 			{ 
 				xset = (width/ln) * i;
-				console.log(xset);
 				return xset;
 			}).
 		y(
 			function(d) 
 			{ 
 				yset = (d.close/max)*height;
-				console.log(yset);
 				return yset;
 			});
 
