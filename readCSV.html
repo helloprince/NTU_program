@@ -8,11 +8,20 @@
 <body>
 <script type="text/javascript">
 
-d3.csv("./stocks.csv", function(data) {
-  data.forEach(function(d) {
-      d.date = parseTime(d.date);
-      d.close = +d.close;
-  });
+var parseTime = d3.timeParse("%d-%b-%y");
+d3.csv("./stocks.csv", 
+	function(data)
+	{
+		data.forEach(
+			function(d)
+			{
+				d.date = parseTime(d.date);
+				d.close = +d.close;
+			}
+		);
+	}
+);
+
 
 </script>
 </body>
