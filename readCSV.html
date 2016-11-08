@@ -19,6 +19,7 @@ d3.csv("./stocks.csv",
 
 	function(data)
 	{
+		var ln = data.length;
 		data.forEach(
 			function(d)
 			{
@@ -34,9 +35,9 @@ d3.csv("./stocks.csv",
 
 		var valueline = d3.line().
 		x(
-			function(d) 
+			function(d,i) 
 			{ 
-				return x(d.date); 
+				return (width/ln)*i; 
 			}).
 		y(
 			function(d) 
