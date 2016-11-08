@@ -28,7 +28,7 @@ d3.csv("./stocks.csv",
 			{
 				d.date = parseTime(d.date);
 				d.close = +d.close;
-				max = d3.max(data.close);
+				max = d3.max(d.close);
 			}
 		);
 
