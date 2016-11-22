@@ -11,4 +11,3 @@ function cat(){
   var mouse1 = svgContainer.append("ellipse").attr("cx", 200).attr("cy", 249).attr("rx", 60).attr("ry", 24).style("fill", "yellow");
   var mouse2 = svgContainer.append("rect").attr("x", 125).attr("y", 225).attr("width", 150).attr("height", 25).style("fill", "red");
 }
-cat();
