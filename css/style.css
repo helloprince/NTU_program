@@ -539,6 +539,13 @@
 			color: white;
 		}
 
+		.wrapper.style6 {
+			background: gray;
+			text-align: center;
+			color: white;
+		}
+
+
 			.wrapper.style5 .image {
 				display: block;
 				width: 60%;
