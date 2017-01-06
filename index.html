@@ -1,198 +1,1279 @@
 <!DOCTYPE HTML>
-<!--
-	Solarize by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
+
 <html>
-	<head>
-		<title>太陽能裝設區域分析</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.dropotron.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-	</head>
-	<body class="homepage">
+<head>
+	<title>太陽能裝設區域分析</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<link rel="stylesheet" href="./mycss/css.css">
+	<script src="./myjs/draw.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.dropotron.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="css/skel.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</noscript>
 
-		<!-- Header Wrapper -->
-			<div class="wrapper style1">
-			
-			<!-- Header -->
-				<div id="header">
-					<div class="container">
-							
-						<!-- Logo -->
-							<h1><a href="#" id="logo">太陽能裝設區域分析</a></h1>
-						
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li class="active"><a href="index.html">首頁</a></li>								
-									<li><a href="map.html">太陽能地圖</a>
-									    <ul>	
-										    <li>北部
-											<ul>
-											<li><a href="#">基隆(基隆市)</a></li>
-											<li><a href="#">台北(台北市)</a></li>
-											<li><a href="#">竹子湖(台北市)</a></li>
-											<li><a href="#">鞍部(台北市)</a></li>										
-											<li><a href="#">淡水(新北市)</a></li>
-											<li><a href="#">板橋(新北市)</a></li>
-											<li><a href="#">新屋(桃園市)</a></li>
-											<li><a href="#">新竹(新竹縣)</a></li>
-											</ul>
-											</li>
-											<li>中部
-											<ul>
-											<li><a href="#">台中(台中市)</a></li>
-											<li><a href="#">梧棲(台中市)</a></li>
-											<li><a href="#">嘉義(嘉義市)</a></li>
-											<li><a href="#">阿里山(嘉義縣)</a></li>
-											<li><a href="#">玉山(南投縣)</a></li>
-											<li><a href="#">日月潭(南投縣)</a></li>
-											</ul>
-											</li>
-											<li>南部
-											<ul>
-											<li><a href="#">台南(台南市)</a></li>
-											<li><a href="#">永康(台南市)</a></li>
-											<li><a href="#">高雄(高雄市)</a></li>
-											<li><a href="#">恆春(屏東縣)</a></li>
-											</ul>
-											</li>
-											<li>東部
-											<ul>
-											<li><a href="#">宜蘭(宜蘭縣)</a></li>
-											<li><a href="#">蘇澳(宜蘭縣)</a></li>
-											<li><a href="#">花蓮(花蓮縣)</a></li>
-											<li><a href="#">台東(台東縣)</a></li>
-											<li><a href="#">大武(台東縣)</a></li>
-											<li><a href="#">成功(台東縣)</a></li>
-											</ul>
-											</li>
-											<li>離島
-											<ul>
-											<li><a href="#">澎湖(澎湖縣)</a></li>
-											<li><a href="#">金門(金門縣)</a></li>
-											<li><a href="#">馬祖(連江縣)</a></li>
-											</ul>
-											</li>
+	<style>
+		.Page {display:none;}
+	</style>
+	<style>
+		#First {display:block;}
+	</style>
+</head>
 
-										</ul>
-									</li>
-									<li><a href="system.html">太陽能建置</a></li>
-								</ul>
-							</nav>	
-					</div>
-				</div>
-				
-			<!-- Banner -->
-				<div id="banner">
-					<section class="container">
-						<h2>太陽能裝設區域分析</h2>
-						<span>第四組</span>
-					</section>
-				</div>
-
+<body class="homepage">
+	<!-- Header Wrapper -->
+	<div class="wrapper style1">			
+		<!-- Header -->
+		<div id="header">
+			<div class="container">						
+				<!-- Nav -->
+				<nav class="w3-topnav w3-top", id="nav">
+					<ul>
+						<li><a href="#" class="highLight active" onclick="openPage(event, 'First')">首頁</a></li>
+						<li><a href="#" class="highLight">太陽能地圖</a>
+							<ul>	
+								<li>北部
+									<ul>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'KL')">基隆市(含新北市東區)</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'NTCN')">新北市(北區)</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'NTCS')">新北市(南區)</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'TPYM')">台北市(陽明山)</a></li>										
+										<li><a href="#" class="highLight" onclick="openPage(event, 'TP')">台北市</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'TY')">桃園市</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'HC')">新竹</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'ML')">苗栗縣</a></li>
+									</ul>
+								</li>
+								<li>中部
+									<ul>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'TC')">台中市</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'TCW')">台中市(西區)</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'CH')">彰化縣</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'NT')">南投縣</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'NTMJ')">南投縣(玉山)</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'YNL')">雲林縣</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'CYC')">嘉義市</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'CY')">嘉義縣</a></li>
+									</ul>
+								</li>
+								<li>南部
+									<ul>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'TNN')">台南市(北區)</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'TNS')">台南市(南區)</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'KS')">高雄市</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'PT')">屏東縣</a></li>
+									</ul>
+								</li>
+								<li>東部
+									<ul>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'YLN')">宜蘭縣(北區)</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'YLS')">宜蘭縣(南區)</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'HL')">花蓮縣</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'TTN')">台東縣(北區)</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'TTM')">台東縣(中區)</a></li>
+										<li><a href="#" class="highLight" onclick="openPage(event, 'TTS')">台東縣(南區)</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#" class="highLight" onclick="openPage(event, 'Third')">太陽能建置</a></li>
+					</ul>
+				</nav>
 			</div>
-		
-		<!-- Section One -->
-			<div class="wrapper style2">
-				<section class="container">
-					<div class="row double">
-						<div class="6u">
-							<header class="major">
-								<h2>太陽能裝設區域</h2>
-								<span class="byline">In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Donec pulvinar ullamcorper metus.</span>
-							</header>
-						</div>
-						<div class="6u">
-							<h3>Suspendisse dictum porta</h3>
-							<p>Donec leo. Vivamus fermentum nibh in augue. Praesent a lacus at urna congue rutrum. Nulla enim eros, porttitor eu, tempus id, varius non, nibh. Vestibulum imperdiet, magna nec eleifend semper augue mattis wisi maecenas ligula nunc lectus vestibulum euismod lacinia quam nisl.</p>
-							<a href="#" class="button">Nulla aluctus eleifend</a>
-						</div>
-					</div>
-				</section>
-			</div>
+		</div>
+	</div>
 
-		<!-- Section Two -->
-			<div class="wrapper style6">
-				<section class="container">
-					<header class="major">
-						<h2>地圖</h2>
-					</header>
-					<p>Pellentesque pede. Donec pulvinar ullamcorper metus. In eu odio at lectus pulvinar mollis. Vestibulum sem magna, elementum vestibulum arcu.</p>
-					<a href="#" class="button alt">Nulla aluctus eleifend</a>
-				</section>
-			</div>
-
-		
-		<!-- Team -->
-			<div class="wrapper style5">
-				<section id="team" class="container">
-					<header class="major">
-						<h2>組員介紹</h2>
-						<span class="byline">第四組</span>
-					</header>
-					<div class="row">
-						<div class="4u">
-							<a href="https://www.facebook.com/profile.php?id=100000307970316&fref=pb&hc_location=profile_browser" class="image"><img src="images/placeholder.png" alt=""></a>
-							<h3>何昱辰</h3>
-							<p>資管二</p>
-						</div>
-						<div class="4u">
-							<a href="https://www.facebook.com/syusiki?fref=pb&hc_location=profile_browser" class="image"><img src="images/placeholder.png" alt=""></a>
-							<h3>朱子齊</h3>
-							<p>化學四</p>
-						</div>
-						<div class="4u">
-							<a href="https://www.facebook.com/seven.atlantis?fref=pb&hc_location=profile_browser" class="image"><img src="images/placeholder.png" alt=""></a>
-							<h3>陳庭萱</h3>
-							<p>化學四</p>
-						</div>
-						<div class="4u">
-							<a href="https://www.facebook.com/ktiugl?fref=pb&hc_location=profile_browser" class="image"><img src="images/placeholder.png" alt=""></a>
-							<h3>李恆安</h3>
-							<p>生機四</p>
-						</div>
-						<div class="4u">
-							<a href="https://www.facebook.com/caixuanl?fref=pb&hc_location=profile_browser" class="image"><img src="images/placeholder.png" alt=""></a>
-							<h3>林采萱</h3>
-							<p>戲劇二</p>
-						</div>
-						<div class="4u">
-							<a href="https://www.facebook.com/profile.php?id=100000229651869&fref=pb&hc_location=profile_browser" class="image"><img src="images/placeholder.png" alt=""></a>
-							<h3>鄧晴尹</h3>
-							<p>國企三</p>
-						</div>
-					</div>
-				</section>
-			</div>
-
-	<!-- Footer -->
-		<div id="footer">
+	<!-- Page 1 -->
+	<div id="First" class="w3-center w3-animate-bottom Page center">
+		<div  class = "wrapper style1", id="banner">
 			<section class="container">
-				<header class="major">
-					<h2>Connect with us</h2>
-					<span class="byline"><a href="https://www.facebook.com/groups/283207588460616/">PecuClub</a></span>
-				</header>
+				<h2>太陽能裝設區域分析</h2>
+				<span>第四組</span>
 			</section>
-			
-			<!-- Copyright -->
-				<div id="copyright">
-					Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
-				</div>			
 		</div>
 
-	</body>
+		<!-- Section One -->
+		<div class="wrapper style2">
+			<section class="container">
+				<div class="row double">
+					<div class="6u">
+						<header class="major">
+							<h2>太陽能裝設區域</h2>
+							<span class="byline">In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Donec pulvinar ullamcorper metus.</span>
+						</header>
+					</div>
+					<div class="6u">
+						<h3>Suspendisse dictum porta</h3>
+						<p>Donec leo. Vivamus fermentum nibh in augue. Praesent a lacus at urna congue rutrum. Nulla enim eros, porttitor eu, tempus id, varius non, nibh. Vestibulum imperdiet, magna nec eleifend semper augue mattis wisi maecenas ligula nunc lectus vestibulum euismod lacinia quam nisl.</p>
+						<a href="#" class="button">Nulla aluctus eleifend</a>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- Section One -->
+
+		<!-- Section Two -->
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>地圖</h2>
+				</header>
+				<div style="width: 500px; height: 600px; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url(twmap.svg)">
+					<table id="mapTable" style="width: 500px; height: 600px; word-wrap:break-word; table-layout: fixed; word-break: break-all; font-size: 8px">
+					</table>
+				</div>
+			</section>
+		</div>
+		<!-- Section Two -->
+		
+		<!-- Team -->
+		<div class="wrapper style6">
+			<section id="team" class="container">
+				<header class="major">
+					<h2>組員介紹</h2>
+					<span class="byline">第四組</span>
+				</header>
+				<div class="row">
+					<div class="4u">
+						<a href="https://www.facebook.com/profile.php?id=100000307970316&fref=pb&hc_location=profile_browser" class="image"><img src="images/placeholder.png" alt=""></a>
+						<h3>何昱辰</h3>
+						<p>資管二</p>
+					</div>
+					<div class="4u">
+						<a href="https://www.facebook.com/syusiki?fref=pb&hc_location=profile_browser" class="image"><img src="images/placeholder.png" alt=""></a>
+						<h3>朱子齊</h3>
+						<p>化學四</p>
+					</div>
+					<div class="4u">
+						<a href="https://www.facebook.com/seven.atlantis?fref=pb&hc_location=profile_browser" class="image"><img src="images/placeholder.png" alt=""></a>
+						<h3>陳庭萱</h3>
+						<p>化學四</p>
+					</div>
+					<div class="4u">
+						<a href="https://www.facebook.com/ktiugl?fref=pb&hc_location=profile_browser" class="image"><img src="images/placeholder.png" alt=""></a>
+						<h3>李恆安</h3>
+						<p>生機四</p>
+					</div>
+					<div class="4u">
+						<a href="https://www.facebook.com/caixuanl?fref=pb&hc_location=profile_browser" class="image"><img src="images/placeholder.png" alt=""></a>
+						<h3>林采萱</h3>
+						<p>戲劇二</p>
+					</div>
+					<div class="4u">
+						<a href="https://www.facebook.com/profile.php?id=100000229651869&fref=pb&hc_location=profile_browser" class="image"><img src="images/placeholder.png" alt=""></a>
+						<h3>鄧晴尹</h3>
+						<p>國企三</p>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- Team -->
+	</div>
+
+	<!-- Page 2 KL-->
+	<div id="KL" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>基隆市(含新北市東區)不適合太陽能發電</h2>
+					<p style="font-size:300%;">12.9年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>						
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>基隆市(含新北市東區)每年日射量</h2>
+					<span class="byline">基隆測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/基隆日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>基隆市每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/基隆發電.gif" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 NTCN-->
+	<div id="NTCN" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>新北市(北區)不適合太陽能發電</h2>
+					<p style="font-size:300%;">11.5年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>新北市(北區)每年日射量</h2>
+					<span class="byline">新北淡水測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/新北淡水日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>大台北地區每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/新北淡水發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 NTCS-->
+	<div id="NTCS" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>新北市(南區)不適合太陽能發電</h2>
+					<p style="font-size:300%;">12.3年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>新北市(南區)每年日射量</h2>
+					<span class="byline">新北板橋測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/新北板橋日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>大台北地區每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/新北板橋發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 TPYM-->
+	<div id="TPYM" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>台北市(陽明山)不適合太陽能發電</h2>
+					<p style="font-size:300%;">14.1年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>台北市(陽明山)每年日射量</h2>
+					<span class="byline">北市陽明山竹子湖測站，北市陽明山鞍部測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/北市陽明山竹子湖日照.jpg" alt="">
+					<img src="plot/北市陽明山鞍部日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>大台北地區每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/北市陽明山竹子湖發電.jpg" alt="">
+					<img src="plot/北市陽明山鞍部發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 TP-->
+	<div id="TP" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>台北市不適合太陽能發電</h2>
+					<p style="font-size:300%;">12.7年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>台北市每年日射量</h2>
+					<span class="byline">台北市測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/北市日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>大台北地區每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/北市發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 TY-->
+	<div id="TY" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>桃園市適合太陽能發電</h2>
+					<p style="font-size:300%;">10.2年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>桃園市每年日射量</h2>
+					<span class="byline">桃園市新屋測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/桃園市新屋日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>桃園市每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/桃園新屋發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 HC-->
+	<div id="HC" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>新竹不適合太陽能發電</h2>
+					<p style="font-size:300%;">11.4年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>新竹每年日射量</h2>
+					<span class="byline">新竹市測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/新竹日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>新竹每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/新竹發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>			
+
+	<!-- Page 2 ML-->
+	<div id="ML" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>苗栗縣適合太陽能發電</h2>
+					<p style="font-size:300%;">10年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>苗栗縣每年日射量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="images/placeholder.png" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>苗栗縣每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="images/placeholder.png" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 TC-->
+	<div id="TC" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>台中市可考慮太陽能發電</h2>
+					<p style="font-size:300%;">11年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>台中市每年日射量</h2>
+					<span class="byline">台中市測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/台中日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>台中市每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/台中發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 TCW-->
+	<div id="TCW" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>台中市(西區)不適合太陽能發電</h2>
+					<p style="font-size:300%;">11.6年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>台中市(西區)每年日射量</h2>
+					<span class="byline">台中梧棲測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/台中梧棲日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>台中市每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/台中梧棲發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 CH-->
+	<div id="CH" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>彰化縣適合太陽能發電</h2>
+					<p style="font-size:300%;">10年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>彰化縣每年日射量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="images/placeholder.png" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>彰化縣每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="images/placeholder.png" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 NT-->
+	<div id="NT" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>南投縣不適合太陽能發電</h2>
+					<p style="font-size:300%;">13.5年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>南投縣每年日射量</h2>
+					<span class="byline">南投日月潭測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/南投日月潭日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>南投縣每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/南投日月潭發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>			
+
+	<!-- Page 2 NTMJ-->
+	<div id="NTMJ" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>南投縣(玉山)可考慮太陽能發電</h2>
+					<p style="font-size:300%;">10.8年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>南投縣(玉山)每年日射量</h2>
+					<span class="byline">南投玉山測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/南投玉山日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>南投縣每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/南投玉山發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 YNL-->
+	<div id="YNL" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>雲林縣適合太陽能發電</h2>
+					<p style="font-size:300%;">10.4年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>雲林縣每年日射量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="images/placeholder.png" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>雲林縣每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="images/placeholder.png" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 CYC-->
+	<div id="CYC" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>嘉義市可考慮太陽能發電</h2>
+					<p style="font-size:300%;">10.5年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>嘉義市每年日射量</h2>
+					<span class="byline">嘉義市測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/嘉義日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>嘉義每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/嘉義發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 CY-->
+	<div id="CY" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>嘉義縣不適合太陽能發電</h2>
+					<p style="font-size:300%;">13.3年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>嘉義縣每年日射量</h2>
+					<span class="byline">嘉義阿里山測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/嘉義阿里山日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>嘉義每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/嘉義阿里山發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 TNN-->
+	<div id="TNN" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>台南市(北區)適合陽能發電</h2>
+					<p style="font-size:300%;">10.2年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>台南市(北區)每年日射量</h2>
+					<span class="byline">台南市測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/台南日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>台南市每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/台南發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>			
+
+	<!-- Page 2 TNS-->
+	<div id="TNS" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>台南市(南區)不適合太陽能發電</h2>
+					<p style="font-size:300%;">11.4年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>台南市(南區)每年日射量</h2>
+					<span class="byline">台南永康測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/台南永康日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>台南市每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/台南永康發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 KS-->
+	<div id="KS" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>高雄市可考慮太陽能發電</h2>
+					<p style="font-size:300%;">10.6年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>高雄市每年日射量</h2>
+					<span class="byline">高雄市測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/高雄日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>高雄市每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/高雄發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 PT-->
+	<div id="PT" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>屏東縣適合太陽能發電</h2>
+					<p style="font-size:300%;">10.2年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>屏東縣每年日射量</h2>
+					<span class="byline">屏東恆春測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/屏東恆春日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>屏東縣每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/屏東恆春發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 YLN-->
+	<div id="YLN" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>宜蘭縣(北區)不適合太陽能發電</h2>
+					<p style="font-size:300%;">12.5年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>宜蘭縣(北區)每年日射量</h2>
+					<span class="byline">宜蘭市測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/宜蘭日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>宜蘭縣每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/宜蘭發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 YLS-->
+	<div id="YLS" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>宜蘭縣(南區)不適合太陽能發電</h2>
+					<p style="font-size:300%;">13.6年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>宜蘭縣(南區)每年日射量</h2>
+					<span class="byline">宜蘭蘇澳測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/宜蘭蘇澳日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>宜蘭縣每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/宜蘭蘇澳日照.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>			
+
+	<!-- Page 2 HL-->
+	<div id="HL" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>花蓮縣不適合太陽能發電</h2>
+					<p style="font-size:300%;">11.2年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>花蓮縣每年日射量</h2>
+					<span class="byline">花蓮測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/花蓮日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>花蓮縣每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/花蓮發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 TTN-->
+	<div id="TTN" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>台東縣(北區)不適合太陽能發電</h2>
+					<p style="font-size:300%;">11.8年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>台東縣(北區)每年日射量</h2>
+					<span class="byline">台東成功測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/台東成功日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>台東縣每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/台東成功發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 TTM-->
+	<div id="TTM" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>台東縣(中區)可考慮太陽能發電</h2>
+					<p style="font-size:300%;">10.9年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>台東縣(中區)每年日射量</h2>
+					<span class="byline">台東測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/台東日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>台東縣每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/台東發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>
+
+	<!-- Page 2 TTS-->
+	<div id="TTS" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style3">
+			<section class="container">
+				<header class="major">
+					<h2>台東縣(南區)不適合太陽能發電</h2>
+					<p style="font-size:300%;">11.8年回本</p>
+				</header>
+				<p>每千瓦每年收益金額：年均日射量*日照角度*性能比*收購電價=？元</p>
+				<p>說明：</p>
+			</section>
+		</div>
+
+		<div class="wrapper style4">
+			<section class="container">
+				<header class="major">
+					<h2>台東縣(南區)每年日射量</h2>
+					<span class="byline">台東大武測站</span>
+				</header>
+				<header class="major">
+					<img src="plot/台東大武日照.jpg" alt="">
+				</header>
+			</section>
+		</div>
+		
+		<div class="wrapper style6">
+			<section class="container">
+				<header class="major">
+					<h2>台東縣每年實際發電量</h2>
+					<span class="byline">說明</span>
+				</header>
+				<header class="major">
+					<img src="plot/台東大武發電.jpg" alt="">
+				</header>	
+			</section>
+		</div>
+	</div>	
+
+	<!-- Page 3 -->
+	<div id="Third" class="w3-center w3-animate-bottom Page center">
+		<div class="wrapper style5">
+			<section id="team" class="container">
+				<header class="major">
+					<h2>建議之太陽能發電建置方式</h2>
+					<p class="byline">太陽能發電系統相當多樣，廠商也多。哪種系統、廠商、發電條件才是理想的呢?</p>
+				</header>
+				<div class="row">
+					<div class="4u">
+						<h3>併聯系統</h3>
+						<img src="images/offices.png" alt="">
+						<p style="text-align: left;">市電與太陽光電系統併聯發電，不夠的電由台電供電。好比將市電當作一個無限大、無窮壽命的免費蓄電池。</p>
+					</div>
+					<div class="4u">						
+						<h3>誠信廠商</h3>
+						<img src="images/online-store.png" alt="">
+						<p>豪科能源、上陽能源、HAMAK</p>
+					</div>
+					<div class="4u">
+						<h3>裝設條件</h3>
+						<img src="images/solar-panel.png" alt="">
+						<p style="text-align: left;">強度高、穩定的日照較理想。詳細請自台陽能地圖觀看我們的分析。</p>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="wrapper style6">
+			<header class="major">
+				<section id="team" class="container">
+					<h2>電能躉購制度</h2>
+					<p class="byline" style="text-align: left;">目前國內已實施「再生能源發展條例」，自該條例通過後，政府已採用電能躉購制度（Feed-in Tariff, FIT）來獎勵推動再生能源設置，並無提供一般太陽光電發電系統之設備補助費。太陽光電發電三大保證</p>
+				</header>
+				<div class="row">
+					<div class="4u">
+						<h3>保證購電</h3>
+						<img src="images/lightning.png" alt="">
+						<p>立法保證，簽約後，20年皆以固定費率購電</p>
+					</div>
+					<div class="4u">			
+						<h3>保證併聯</h3>
+						<img src="images/satellite.png" alt="">
+						<p>凡通過能源局同意備案審查，保證併聯賣電</p>
+					</div>
+					<div class="4u">
+						<h3>合理利潤</h3>
+						<img src="images/get-money.png" alt="">
+						<p>包含設備逐年攤還，維運費用、資金成本及合理利潤</p>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="wrapper style5">
+			<header class="major">
+				<section id="team" class="container">
+					<h2>費率說明表格</h2>
+					<p class="byline" style="text-align: left;">太陽光電發電設備設置於北部地區（包含基隆市、臺北市、新北市、桃園市、新竹縣、新竹市、苗栗縣、宜蘭縣 及花蓮縣），且躉購費率適用中華民國一百零六年度之上限費率者，其電能躉購費率加成百分之十五。</p>
+					<img src="images/b.png" alt="" style="margin-top: 10px">
+				</section>
+			</header>
+		</div>
+		<div class="wrapper style6">
+			<header class="major">
+				<section id="team" class="container">
+					<h2>Ｑ＆Ａ</h2>
+					<p class="byline" style="text-align: left;">Q:太陽光電發電系統的壽命有多長？</p>
+					<p class="byline" style="text-align: left;">A:大多數太陽能發電模組產品的保固普遍是20年以上，20年後，仍有超過百分之80的發電效能，直流轉交流的變流器產品保固期則約為5年。</p>
+					<p class="byline" style="text-align: left;">Q:台電保證收購20年，那20年之後呢？</p>
+					<p class="byline" style="text-align: left;">A:收購年限到期後有兩種選擇：1.繼續與台電簽約、賣電給台電，但收購時間改為5年一期，賣電費率則以台電當年度公告的迴避成本來計價。2. 自己發電自己用。</p>
+					<p class="byline" style="text-align: left;">Q:公寓大廈可以安裝嗎？</p>
+					<p class="byline" style="text-align: left;">A:1.可依「公寓大廈管理條例」相關規定辦理。2.未成立管理委員者，可依民法相關規定辦理</p>
+				</section>
+			</header>
+		</div>
+		<div class="wrapper style5">
+			<header class="major">
+				<section id="team" class="container">
+					<h2>相關網站</h2>
+					<p class="byline">http://solarpv.itri.org.tw/sun.html
+					</p>
+					<p class="byline">http://solarpv.itri.org.tw/technology.html
+					</p>
+					<p class="byline">http://solarpv.itri.org.tw/question.html
+					</p>
+					<p class="byline">http://mrpv2.mynet.com.tw/information.php?sort_id=31
+					</p>
+				</section>
+			</header>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<div id="footer">
+		<section class="container">
+			<header class="major">
+				<h2>Connect with us</h2>
+				<span class="byline"><a href="https://www.facebook.com/groups/283207588460616/">PecuClub</a></span>
+			</header>
+			<ul class="icons">
+				<li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
+				<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
+				<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
+				<li><a href="#" class="fa fa-google-plus"><span>Google+</span></a></li>
+			</ul>
+			<hr />
+		</section>		
+	</div>
+	<script src="./js/page.js"></script>
+
+</body>
 </html>
