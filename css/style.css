@@ -809,6 +809,7 @@
 	svg a:hover {
 		-webkit-transform: scale(1.002, 1.002);
 		transform: scale(1.002, 1.002);
+		background: darkgreen;
 		opacity: 0.5;
 		-webkit-transition: all 2s;
 		transition: all 2s;
