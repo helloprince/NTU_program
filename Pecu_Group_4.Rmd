@@ -1,0 +1,99 @@
+---
+title: "Pecu-Group4-Slide"
+subtitle: "太陽能裝設區域分析"
+author: "Chester Her"
+date: "2017年1月7日"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 主題簡介
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Agenda
+
+- 爬蟲--日照量與發電量  
+- 資料視覺化
+- 推測、比較與評估
+
+## 爬蟲--日照量與發電量
+
+首先，我們上網查找政府相關部門公布之日照量與發電量。
+
+- 日照量-中央氣象局
+- 發電量-能源局
+
+但由於政府官方網站並未有系統地公開多年記錄的資料，實際上我們是從各種網站及部落格一年一年地爬資料下來。
+
+## 爬蟲--日照量與發電量
+
+發電量資料來源：
+
+- 100年 <http://twpage5000.com/shinepvtech/knowledge.html>
+- 102年 <http://www.solar2money.com/solar/how_much_solar_energy.html>
+- 103年 <http://mrpv2.mynet.com.tw/information.php?sort_id=31>
+- 104年 <http://www.taipower.com.tw/content/new_info/new_info-b49.aspx?LinkID=9>
+  
+日照量資料來源：
+
+## 爬蟲--日照量與發電量
+
+利用 **readHTMLTable()** 函式抓取網頁中的table
+
+範例：103年實際發電量
+
+
+```
+library(XML)
+url103='http://mrpv2.mynet.com.tw/information.php?sort_id=31'
+table103=readHTMLTable(url103)
+knitr::kable(table103[[1]])
+```
+## 爬蟲--日照量與發電量
+
+```{r, result='asis'}
+library(XML)
+url103='http://mrpv2.mynet.com.tw/information.php?sort_id=31'
+table103=readHTMLTable(url103)
+knitr::kable(head(table103[[1]]))
+```
+
+## 資料視覺化
+
+將各年資料進行整理，用R的plot()函式作折線圖，顯示歷年來台灣各地發電量與日照量的變化
+
+範例：以顏色表示不同地區，將所有資料彙集成一張圖表
+
+```
+solar <- read.csv("solar/solar_elec.csv")
+sy<- solar[1:19,2:6]
+sx <- c(100:104)
+allc <- rainbow(20)
+plot(sx, sy[1,], type='l',col=allc[1] , ylim=c(min(sy, na.rm=TRUE)*1.1, max(sy, na.rm=TRUE)*1.1), xlab="Year", ylab="Electrical energy", main="Annual solar-generated electrical energy between different counties")
+for(i in 2:19){
+  points(sx, sy[i,], pch=19, col=allc[i])
+  lines(sx, sy[i,],col=allc[i])
+}
+
+```
+## 資料視覺化
+
+```{r}
+
+solar <- read.csv("solar/solar_elec.csv")
+sy<- solar[1:19,2:6]
+sx <- c(100:104)
+allc <- rainbow(20)
+plot(sx, sy[1,], type='l',col=allc[1] , ylim=c(min(sy, na.rm=TRUE)*1.1, max(sy, na.rm=TRUE)*1.1), xlab="Year", ylab="Electrical energy", main="Annual solar-generated electrical energy between different counties")
+for(i in 2:19){
+  points(sx, sy[i,], pch=19, col=allc[i])
+  lines(sx, sy[i,],col=allc[i])
+}
+
+```
