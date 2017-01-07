@@ -810,6 +810,6 @@
 		-webkit-transform: scale(1.002, 1.002);
 		transform: scale(1.002, 1.002);
 		opacity: 0.5;
-		-webkit-transition: all 1s ease 0s;
-		transition: all 1s ease 0s;
+		-webkit-transition: all 2s;
+		transition: all 2s;
 	}
