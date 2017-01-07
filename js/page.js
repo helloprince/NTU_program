@@ -1,5 +1,5 @@
 function openPage(evt, pageName){
-    var i, x, highLights;
+    var i, x, highLights, map;
     x = document.getElementsByClassName("Page");
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none"; 
