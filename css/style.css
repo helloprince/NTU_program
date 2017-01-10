@@ -471,7 +471,7 @@
 	/* Wrapper */
 
 	.wrapper {
-		padding: 5em 0em 4em 0em;
+		padding: 4em 0em 4em 0em;
 	}
 
 	.wrapper.style1 {
@@ -554,7 +554,7 @@
 
 	#header {
 		color: white;
-		height: 6em;
+		height: 5em;
 		background: rgba(0, 0, 0, 0.5);
 	}
 
