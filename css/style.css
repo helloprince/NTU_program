@@ -471,7 +471,7 @@
 	/* Wrapper */
 
 	.wrapper {
-		padding: 5em 0em 4em 0em;
+		padding: 4em 0em 4em 0em;
 	}
 
 	.wrapper.style1 {
@@ -521,10 +521,6 @@
 		padding-right: 6em;
 	}
 
-	.wrapper.style3 p {
-		font-size: 1.6em;
-	}
-
 	.wrapper.style4 {
 		background: white;
 	}
@@ -558,7 +554,7 @@
 
 	#header {
 		color: white;
-		height: 6em;
+		height: 4em;
 		background: rgba(0, 0, 0, 0.5);
 	}
 
